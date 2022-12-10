@@ -1,0 +1,57 @@
+# STACK
+stack = []
+while True:
+    # POP AN ITEM
+    def pop(i):
+        stack.pop(i)
+
+    # PUSH AN ITEM
+    def push(i):
+
+        if stack == 0:
+            stack.append(i)
+        elif stack != 0:
+            stack.insert(0, i)
+
+    # CHECK IF THE STACK IS EMPTY
+    def isEmpty():
+        if len(stack) == 0:
+            print("The stack is empty")
+        else:
+            print("False")
+
+    # CHECK THE STACK ITEMS
+    def peek():
+        print(stack)
+
+    # COUNT THE STACK ITEMS
+    def count():
+        print(len(stack))
+
+    # Enter Values:
+    operation = input(
+        "Choose Operation\n1.Push\n2.Pop\n3.IsEmpty\n4.Peek\n5.Count\nEnter any value to exit......\nEnter number:")
+    if operation == '1':
+        value = input("Enter the value:")
+        push(value)
+        print(value, "is added")
+        print(stack)
+        print()
+    elif operation == '2':
+        print(stack[0], "is popped")
+        pop(0)
+        print(stack)
+        print()
+    elif operation == '3':
+        isEmpty()
+        print()
+    elif operation == '4':
+        peek()
+        print()
+    elif operation == '5':
+        count()
+        print()
+    else:
+        break
+# FINAL STACK
+print("My stack", stack)
